@@ -2,7 +2,7 @@
 
 Boot task to execute a shell command, without changing the fileset
 
-[![CircleCI](https://circleci.com/gh/adamrenklint/boot-fmt.svg?style=svg)](https://circleci.com/gh/adamrenklint/boot-fmt)
+[![Clojars Project](https://img.shields.io/clojars/v/adamrenklint/boot-exec.svg?style=for-the-badge)](https://clojars.org/adamrenklint/boot-exec) [![CircleCI](https://img.shields.io/circleci/project/github/adamrenklint/boot-exec.svg?style=for-the-badge)](https://circleci.com/gh/adamrenklint/boot-exec)
 
 ```clojure
 [adamrenklint/boot-exec "1.0.0"] ;; latest release
@@ -15,7 +15,7 @@ $ boot exec -c "echo hello world"
 hello world
 ```
 
-### Options
+## Options
 
 ```
 -c, --cmd      CMD  Command to execute
