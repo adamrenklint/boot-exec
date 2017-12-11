@@ -7,7 +7,7 @@ Boot task to execute a shell command, without changing the fileset
 )](https://circleci.com/gh/adamrenklint/boot-exec)
 
 ```clojure
-[adamrenklint/boot-exec "1.0.0"] ;; latest release
+[adamrenklint/boot-exec "1.0.1"] ;; latest release
 ```
 
 ## Usage

@@ -13,5 +13,5 @@
   (let [pred? (if pred-fn (resolve pred-fn) (fn [] true))]
     (core/with-pass-thru _
       (when (pred?)
-        (binding [clojure.java.shell/*sh-dir* (or dir ".")]
+        (binding [util/*sh-dir* (or dir ".")]
           (apply util/dosh (string/split cmd #" ")))))))

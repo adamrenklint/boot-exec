@@ -1,5 +1,5 @@
 (def project 'adamrenklint/boot-exec)
-(def version "1.0.0")
+(def version "1.0.1")
 
 (set-env!
  :source-paths #{"src"}
@@ -14,7 +14,10 @@
 
 (bootlaces! version)
 
+(ns-unmap 'boot.user 'test)
 (ns-unmap 'boot.user 'format)
+
+(deftask deps [])
 
 (deftask release []
   (comp (build-jar)
@@ -30,8 +33,9 @@
 (deftask format []
   (fmt))
 
-(deftask echo []
-  (exec :cmd "echo hello world"))
+(deftask test []
+  (exec :cmd "cat boot_exec.clj"
+        :dir "src/adamrenklint"))
 
 (task-options!
   pom {:project     project
