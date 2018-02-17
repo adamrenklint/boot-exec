@@ -14,6 +14,6 @@
   (let [pred? (if pred-fn (resolve pred-fn) (fn [] true))]
     (core/with-pass-thru _
       (when (pred?)
-        (binding [util/*sh-dir* (or dir ".")
-                  os-cmd (if windows? (str "cmd /c " cmd) cmd)]
-          (apply util/dosh (string/split os-cmd #" ")))))))
+        (binding [util/*sh-dir* (or dir ".")]
+          (let os-cmd (if windows? (str "cmd /c " cmd) cmd)
+            (apply util/dosh (string/split os-cmd #" "))))))))
