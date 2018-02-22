@@ -2,7 +2,8 @@
   {:boot/export-tasks true}
   (:require [boot.core :as core]
             [boot.util :as util]
-            [clojure.string :as string]))
+            [clojure.string :as string]
+            [cljs.util :refer [windows?]]))
 
 (core/deftask exec
   "Execute a shell command, without changing the fileset"
@@ -14,4 +15,5 @@
     (core/with-pass-thru _
       (when (pred?)
         (binding [util/*sh-dir* (or dir ".")]
-          (apply util/dosh (string/split cmd #" ")))))))
+          (let os-cmd (if windows? (str "cmd /c " cmd) cmd)
+            (apply util/dosh (string/split os-cmd #" "))))))))
