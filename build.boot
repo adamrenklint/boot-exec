@@ -1,5 +1,5 @@
 (def project 'adamrenklint/boot-exec)
-(def version "1.0.2")
+(def version "1.1.0")
 
 (set-env!
  :source-paths #{"src"}
